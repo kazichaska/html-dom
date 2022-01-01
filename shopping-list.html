@@ -31,6 +31,7 @@
     </ul>
 
     <script>
+        // handles for elements
         const list = document.querySelector('ul');
         const input = document.querySelector('input');
         const button = document.querySelector('button');
@@ -41,6 +42,7 @@
             // var itemStore;
             input.value = '';
 
+            // create elements and append to the parent
             const listItem = document.createElement('li');
             const listText = document.createElement('span');
             const listButton = document.createElement('button');
@@ -54,7 +56,12 @@
                 list.removeChild(listItem);
             }
             input.focus();
-        }
+        };
+
+        // function to keep track of keydown events and display on console
+        input.addEventListener('keydown', (event) => {
+                console.log(`You pressed "${event.key}".`);
+        });
 
     </script>
   </body>
